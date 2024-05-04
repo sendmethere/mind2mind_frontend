@@ -1,7 +1,6 @@
 "use client";
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import api from '../../../utils/api';
 import ShareModal from './ShareModal';
 import axios from 'axios';
 
@@ -80,7 +79,7 @@ export default function QuizPage() {
     if (nickname==='anonymous#') return;
 
     try {
-      const response = await api.post('/success_user', {
+      const response = await axios.post('/success_user', {
         nickname,
         quizId: quiz.id
       });
@@ -112,7 +111,7 @@ export default function QuizPage() {
   
   useEffect(() => {
     if (params.access_code) {
-      api.get(`/quizzes/by-access-code/${access_code}`)
+      axios.get(`/quizzes/by-access-code/${access_code}`)
         .then(response => {
           setQuiz(response.data);
           setLoading(false);
