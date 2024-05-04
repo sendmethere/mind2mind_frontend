@@ -88,7 +88,7 @@ export default function CreateQuiz() {
 
 
     try {
-      const response = await axios.post('http://localhost:8000/api/quizzes/', quizData);
+      const response = await axios.post('/api/quizzes/', quizData);
       if (response.status === 201) {
         alert('생성 완료');  // 사용자에게 성공 메시지 표시
         router.push(`/quiz/${response.data.access_code}`);  // 생성된 퀴즈로 리디렉션
