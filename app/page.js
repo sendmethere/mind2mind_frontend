@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import api from '../utils/api';
+import axios from 'axios';
 
 function getLocalStorageItem(key, initialValue) {
   if (typeof window !== 'undefined') {
