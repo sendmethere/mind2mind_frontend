@@ -111,7 +111,7 @@ export default function QuizPage() {
   
   useEffect(() => {
     if (params.access_code) {
-      axios.get(`/quizzes/by-access-code/${access_code}`)
+      axios.get(`/api/quizzes/by-access-code/${access_code}`)
         .then(response => {
           setQuiz(response.data);
           setLoading(false);

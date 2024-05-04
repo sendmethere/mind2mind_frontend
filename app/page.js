@@ -93,7 +93,7 @@ export default function Home() {
       setErrorMessage('닉네임을 입력해주세요.');
       return;
     }
-    axios.get(`/quizzes/by-access-code/${accessCode}`)
+    axios.get(`api/quizzes/by-access-code/${accessCode}`)
       .then(response => {
         if (response.data) {
           router.push(`/quiz/${accessCode}`);
