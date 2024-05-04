@@ -39,7 +39,7 @@ async function generateHash(nickname) {
 
 export default function Home() {
   const [nickname, setNickname] = useState(() => getLocalStorageItem('nickname', ''));
-  const [hash, setHash] = useState('000000');
+  const [hash, setHash] = useState(() => getLocalStorageItem('hash', ''));
   const [uniqueNickname, setUniqueNickname] = useState(() => getLocalStorageItem('uniqueNickname', ''));
   const [accessCode, setAccessCode] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
