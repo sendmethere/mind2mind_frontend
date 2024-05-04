@@ -61,7 +61,7 @@ export default function Home() {
 
     const fetchRandomQuizzes = async () => {
         try {
-            const response = await axios.get('/api/random-quizzes/');
+            const response = await axios.get('api/random-quizzes/');
             setQuizzes(response.data);
         } catch (error) {
             console.error('Error fetching random quizzes:', error);
