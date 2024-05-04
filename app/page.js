@@ -60,7 +60,7 @@ export default function Home() {
 
     const fetchRandomQuizzes = async () => {
         try {
-            const response = await api.get('/random-quizzes/');
+            const response = await axios.get('/api/random-quizzes/');
             setQuizzes(response.data);
         } catch (error) {
             console.error('Error fetching random quizzes:', error);
@@ -92,7 +92,7 @@ export default function Home() {
       setErrorMessage('닉네임을 입력해주세요.');
       return;
     }
-    api.get(`/quizzes/by-access-code/${accessCode}`)
+    axios.get(`/quizzes/by-access-code/${accessCode}`)
       .then(response => {
         if (response.data) {
           router.push(`/quiz/${accessCode}`);
