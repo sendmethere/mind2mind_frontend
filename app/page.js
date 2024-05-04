@@ -38,9 +38,9 @@ async function generateHash(nickname) {
 
 
 export default function Home() {
-  const [nickname, setNickname] = useState(() => localStorage.getItem('nickname')? localStorage.getItem('nickname') : '');
-  const [hash, setHash] = useState(() => localStorage.getItem('hash')? localStorage.getItem('hash') : '000000');
-  const [uniqueNickname, setUniqueNickname] = useState(() =>  localStorage.getItem('uniqueNickname')? localStorage.getItem('uniqueNickname') : '');
+  const [nickname, setNickname] = useState('');
+  const [hash, setHash] = useState('');
+  const [uniqueNickname, setUniqueNickname] = useState('');
   const [accessCode, setAccessCode] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const router = useRouter();
