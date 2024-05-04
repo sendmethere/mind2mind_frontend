@@ -204,7 +204,7 @@ export default function CreateQuiz() {
             )}
 
             {type === '3hint' && [1, 2, 3].map(n => (
-              <div className='flex-col'>
+              <div key={n} className='flex-col'>
                 <input 
                   className={`border-2 rounded-2xl p-1 px-2 m-1 mb-4 text-2xl w-[300px] ${currentHint === `hint${n}`? 'border-sub2' : 'border-main'}`} 
                   key={n} 
