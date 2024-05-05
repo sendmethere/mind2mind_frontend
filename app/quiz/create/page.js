@@ -157,15 +157,15 @@ export default function CreateQuiz() {
   }
 
   return (
-    <div className='w-screen h-screen flex flex-col justify-center items-center'>
-      <div className='flex justify-center items-center'>
+    <div className='md:w-screen md:h-screen flex flex-col justify-center items-center'>
+      <div className='md:flex justify-center items-center'>
       <form onSubmit={handleFormSubmit}>
-        <div className='bg-white mx-4 rounded-xl p-6 min-h-[540px] flex flex-col justify-between'>
+        <div className='bg-white mx-4 rounded-xl p-6 max-md:m-4 md:min-h-[540px] flex flex-col justify-between'>
           <div>
             <p className='text-center text-2xl font-black pb-2'>퀴즈 만들기</p>
             <p className='text-center text-sm text-gray-400 pb-3'>{author && <span>작성자 : {author}</span>} </p>
           
-            <div className="flex justify-center space-x-4 mb-4">
+            <div className="flex justify-center md:space-x-4 md:mb-4">
               {quizTypes.map((qt) => (
                 <button
                   key={qt.value}
@@ -239,7 +239,7 @@ export default function CreateQuiz() {
           </div>
         </div>
       </form>
-      <div className="bg-white rounded-xl p-4 w-[600px] h-[540px] overflow-scroll">
+      <div className="bg-white rounded-xl p-4 max-md:m-4 md:w-[600px] h-[540px] overflow-scroll">
         {emojis.map(emoji => (
         <button className="bg-white border-sub1 m-1 border-2 rounded-xl w-[95px] h-[95px]" key={emoji.no} onClick={() => selectEmoji(emoji.id)}>
           <p className='text-3xl'>{emoji.emoji}</p>

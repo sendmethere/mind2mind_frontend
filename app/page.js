@@ -118,9 +118,9 @@ export default function Home() {
     <div className='w-screen h-screen flex justify-center items-center'>
         <div className='pb-10'>
           <div className='text-center pb-4'>
-            <img src="logo2.svg" alt="logo" className='h-[10rem] mx-auto'/>
+            <img src="logo2.svg" alt="logo" className='h-[4rem] md:h-[10rem] mx-auto'/>
           </div>
-          <div className='flex justify-center items-center h-[250px] gap-10'>
+          <div className='flex justify-center items-center md:h-[250px] gap-10 flex-col md:flex-row'>
             <div onClick={handleCreateQuiz}  className='bg-white rounded-2xl p-10 w-[250px] h-full flex justify-center items-center cursor-pointer hover:bg-sub4'>
               <p className='text-xl font-bold'>퀴즈 만들기</p>
             </div>
@@ -149,16 +149,18 @@ export default function Home() {
                         ))}
             </div>
           </div>
-          <div id="nickname" className='flex items-center justify-center mt-10'>
+          <div id="nickname" className='md:flex items-center justify-center mt-10 max-md:text-center'>
             <span className='mx-2 text-sub1 font-bold'>닉네임</span>
-            <input
-              type="text"
-              className='bg-white rounded-l-full p-2 pl-4'
-              placeholder="닉네임을 입력하세요"
-              value={nickname}
-              onChange={(e) => setNickname(e.target.value)}
-            />
-            <div className='bg-white rounded-r-full text-sub1 p-2 pr-4'>{hash ? `#${hash}` : "#000000"}</div>
+            <div className='flex max-md:mt-4'>
+              <input
+                type="text"
+                className='bg-white rounded-l-full p-2 pl-4'
+                placeholder="닉네임을 입력하세요"
+                value={nickname}
+                onChange={(e) => setNickname(e.target.value)}
+              />
+              <div className='bg-white rounded-r-full text-sub1 p-2 pr-4'>{hash ? `#${hash}` : "#000000"}</div>
+            </div>
             {
             // <button onClick={handleShowStats} className='text-white bg-sub1 p-2 ml-4 rounded-full'>통계 보기</button>
             // {showModal && <StatisticsModal showModal={showModal} onClose={handleCloseModal} nickname={nickname} />}

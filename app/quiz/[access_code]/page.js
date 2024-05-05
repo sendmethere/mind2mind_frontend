@@ -130,7 +130,7 @@ export default function QuizPage() {
   if (!quiz) return <div>No quiz found.</div>;
 
   return (
-  <div className='w-screen h-screen flex justify-center items-center'>
+  <div className='md:w-screen md:h-screen flex justify-center items-center'>
     <div className='bg-white rounded-xl flex-wrap min-w-[450px] max-w-[600px] px-10 py-10'>
         <div className='flex justify-between text-[1.5rem] font-black'>
           <div>{quiz?.author.map(author => author.nickname).join(', ')}의 퀴즈</div>
