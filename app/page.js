@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import api from '../utils/api';
 import axios from 'axios';
+import CryptoJS from 'crypto-js';
 
 function getLocalStorageItem(key, initialValue) {
   if (typeof window !== 'undefined') {
@@ -25,12 +26,8 @@ async function generateHash(nickname) {
   setLocalStorageItem('uniqueID', uniqueID);
 
   if (typeof window !== 'undefined') {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(nickname + uniqueID);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-    const numericHash = parseInt(hashHex.substring(0, 8), 16) % 1000000;
+    const hash = CryptoJS.SHA256(nickname + uniqueID).toString(CryptoJS.enc.Hex);
+    const numericHash = parseInt(hash.substring(0, 8), 16) % 1000000;
     return numericHash.toString().padStart(6, '0');
   }
   return '000000'; // 서버 사이드에서 실행될 경우 기본 해시 반환
