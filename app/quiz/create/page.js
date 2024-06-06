@@ -107,6 +107,14 @@ export default function CreateQuiz() {
     }
   };
 
+  const handleInitialize = () => {
+    setHints({ hint1: [], hint2: [], hint3: [] });
+    setHintText('');
+    setAnswer('');
+    setErrorMessage('');
+    setSuccessMessage('');
+  };
+
     useEffect(() => {
       setHints({ hint1: '', hint2: '', hint3: '' });
     }, [type]);
@@ -165,7 +173,6 @@ export default function CreateQuiz() {
   return (
     <div className='md:w-screen md:h-screen flex flex-col justify-center items-center'>
       <div className='md:flex justify-center items-center'>
-      <form onSubmit={handleFormSubmit}>
         <div className='bg-white mx-4 rounded-xl p-6 max-md:m-4 md:min-h-[540px] flex flex-col justify-between'>
           <div>
             <p className='text-center text-2xl font-black pb-2'>퀴즈 만들기</p>
@@ -238,14 +245,14 @@ export default function CreateQuiz() {
             </div>
           <div>
             <div className='text-center p-2 flex gap-2 justify-center'>
+            <button onClick={handleInitialize} className='bg-gray-400 py-2 px-4 rounded-full text-white'>초기화</button>
               <button onClick={handleGetBack} className='bg-gray-400 py-2 px-4 rounded-full text-white'>돌아가기</button>
-              <button className='bg-sub2 py-2 px-4 rounded-full text-white' type="submit">만들기</button>
+              <button onClick={handleFormSubmit} className='bg-sub2 py-2 px-4 rounded-full text-white'>만들기</button>
             </div>
             {successMessage && <p>{successMessage}</p>}
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
           </div>
         </div>
-      </form>
       <div className="bg-white rounded-xl p-4 max-md:m-4 md:w-[600px] h-[540px] overflow-scroll">
         {emojis.map(emoji => (
         <button className="bg-white border-sub1 m-1 border-2 rounded-xl w-[95px] h-[95px]" key={emoji.no} onClick={() => selectEmoji(emoji.id)}>
