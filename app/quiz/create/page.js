@@ -48,10 +48,16 @@ export default function CreateQuiz() {
   }, []);
 
   const quizTypes = [
-    { label: '3 Emoji', value: '3emoji' },
-    { label: '4+ Emoji', value: '4+emoji' },
-    { label: '3 Hint', value: '3hint' }
+    { label: '3 이모지', value: '3emoji'},
+    { label: '4+ 이모지', value: '4+emoji'},
+    { label: '3 힌트', value: '3hint' }
   ];
+
+  const quizDesc = {
+    '3emoji': '3개의 이모지로만 낱말을 설명해요',
+    '4+emoji': '4개 이상의 이모지로 낱말을 설명해요',
+    '3hint': '3줄의 힌트로 낱말을 설명해요'
+  }
 
   const handleGetBack = () => {
     window.history.back();
@@ -179,6 +185,7 @@ export default function CreateQuiz() {
             </div>
 
             <div className='flex-row justify-center text-center'>
+              <p className='text-sm text-gray-400'>{quizDesc[type]}</p>
               <hr className='my-4 border-main'/>
               {
                 type === '3emoji' && [1, 2, 3].map(n => (
@@ -231,7 +238,7 @@ export default function CreateQuiz() {
             </div>
           <div>
             <div className='text-center p-2 flex gap-2 justify-center'>
-              <button onClick={handleGetBack} className='bg-gray-400 py-2 px-4 rounded-full text-white' type="submit">돌아가기</button>
+              <button onClick={handleGetBack} className='bg-gray-400 py-2 px-4 rounded-full text-white'>돌아가기</button>
               <button className='bg-sub2 py-2 px-4 rounded-full text-white' type="submit">만들기</button>
             </div>
             {successMessage && <p>{successMessage}</p>}
