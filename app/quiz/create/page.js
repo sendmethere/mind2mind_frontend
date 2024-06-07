@@ -197,7 +197,7 @@ export default function CreateQuiz() {
               {
                 type === '3emoji' && [1, 2, 3].map(n => (
                   <input
-                    className={`border-2 rounded-2xl p-1 px-2 m-1 mb-4 text-center text-4xl w-[80px] h-[80px] cursor-pointer ${currentHint === `hint${n}` ? 'border-sub2' : 'border-main'}`}
+                    className={`emoji border-2 rounded-2xl p-1 px-2 m-1 mb-4 text-center text-4xl w-[80px] h-[80px] cursor-pointer ${currentHint === `hint${n}` ? 'border-sub2' : 'border-main'}`}
                     key={n}
                     type="text"
                     value={renderEmojiById(hints[`hint${n}`] || [])}
@@ -210,7 +210,7 @@ export default function CreateQuiz() {
 
             {type === '4+emoji' && (
               <input 
-                className={`border-2 rounded-2xl p-1 px-2 m-1 mb-4 text-2xl w-[300px] ${currentHint === `hint1`? 'border-sub2' : 'border-main'}`} 
+                className={`emoji border-2 rounded-2xl p-1 px-2 m-1 mb-4 text-2xl w-[300px] ${currentHint === `hint1`? 'border-sub2' : 'border-main'}`} 
                 type="text" 
                 value={renderEmojiById(hints.hint1) || []} 
                 readOnly 
@@ -220,7 +220,7 @@ export default function CreateQuiz() {
             {type === '3hint' && [1, 2, 3].map(n => (
               <div key={n} className='flex-col'>
                 <input 
-                  className={`border-2 rounded-2xl p-1 px-2 m-1 mb-4 text-2xl w-[300px] ${currentHint === `hint${n}`? 'border-sub2' : 'border-main'}`} 
+                  className={`emoji border-2 rounded-2xl p-1 px-2 m-1 mb-4 text-2xl w-[300px] ${currentHint === `hint${n}`? 'border-sub2' : 'border-main'}`} 
                   key={n} 
                   type="text" 
                   value={renderEmojiById(hints[`hint${n}`] || [])}
