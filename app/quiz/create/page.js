@@ -256,7 +256,7 @@ export default function CreateQuiz() {
       <div className="bg-white rounded-xl p-4 max-md:m-4 md:w-[600px] h-[540px] overflow-scroll">
         {emojis.map(emoji => (
         <button className="bg-white border-sub1 m-1 border-2 rounded-xl w-[95px] h-[95px]" key={emoji.no} onClick={() => selectEmoji(emoji.id)}>
-          <p className='text-3xl'>{emoji.emoji}</p>
+          <p className='emoji text-3xl'>{emoji.emoji}</p>
           <p className='text-[0.7rem]'>{emoji.desc}</p>
           </button>
         ))}

@@ -145,21 +145,21 @@ export default function QuizPage() {
       <div>
         {quiz.type === "3emoji" && 
           <div className='text-[5rem] text-center flex justify-center gap-4'>
-            <span className='bg-hint1 p-5 rounded-2xl'>{renderEmojiById(quiz?.hint1) || ''}</span>
-            <span className='bg-hint2 p-5 rounded-2xl'>{renderEmojiById(quiz?.hint2)  || ''}</span>
-            <span className='bg-hint3 p-5 rounded-2xl'>{renderEmojiById(quiz?.hint3)  || ''}</span>
+            <span className='emoji bg-hint1 p-5 rounded-2xl'>{renderEmojiById(quiz?.hint1) || ''}</span>
+            <span className='emoji bg-hint2 p-5 rounded-2xl'>{renderEmojiById(quiz?.hint2)  || ''}</span>
+            <span className='emoji bg-hint3 p-5 rounded-2xl'>{renderEmojiById(quiz?.hint3)  || ''}</span>
           </div>
         }
         {quiz.type === "4+emoji" && 
           <div className='text-[3rem] text-center flex-row justify-center'>
-            <p className='bg-sub5 p-5 rounded-2xl'>{renderEmojiById(quiz?.hint1) || ''}</p>
+            <p className='emoji bg-sub5 p-5 rounded-2xl'>{renderEmojiById(quiz?.hint1) || ''}</p>
             </div>
         }
         {quiz.type === "3hint" && 
           <div className='text-[3rem] text-center flex-row justify-center'>
-            <p className='bg-hint1 p-5 my-2 rounded-2xl'>{renderEmojiById(quiz?.hint1) || ''}</p>
-            <p className='bg-hint2 p-5 my-2 rounded-2xl'>{renderEmojiById(quiz?.hint2) || ''}</p>
-            <p className='bg-hint3 p-5 my-2 rounded-2xl'>{renderEmojiById(quiz?.hint3) || ''}</p>
+            <p className='emoji bg-hint1 p-5 my-2 rounded-2xl'>{renderEmojiById(quiz?.hint1) || ''}</p>
+            <p className='emoji bg-hint2 p-5 my-2 rounded-2xl'>{renderEmojiById(quiz?.hint2) || ''}</p>
+            <p className='emoji bg-hint3 p-5 my-2 rounded-2xl'>{renderEmojiById(quiz?.hint3) || ''}</p>
           </div>
         }
         {tooltip && (

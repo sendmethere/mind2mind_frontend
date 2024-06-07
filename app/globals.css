@@ -5,3 +5,7 @@
 body {
     background-color: #9ADDE7;
 }
+
+.emoji {
+    font-family: 'Noto Color Emoji', sans-serif;
+  }
